@@ -35,9 +35,6 @@ class MotionSecondPage extends GetView<MotionSecondLogic> {
         case 1:
           controller.cleanMotionData();
           break;
-        case 2:
-          controller.aboutMotionUS(context);
-          break;
       }
     });
   }

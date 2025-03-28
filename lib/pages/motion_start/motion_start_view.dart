@@ -11,7 +11,7 @@ class MotionStartView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.carroll.value
+          () => controller.prosacco.value
               ? const CircularProgressIndicator(color: Colors.blue)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class MotionStartView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.gctw();
+              controller.abrunqjh();
             },
             icon: const Icon(
               Icons.restart_alt,

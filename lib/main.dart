@@ -9,10 +9,14 @@ import 'package:motion_record/pages/motion_records/motion_records_binding.dart';
 import 'package:motion_record/pages/motion_records/motion_records_view.dart';
 import 'package:motion_record/pages/motion_second/motion_second_binding.dart';
 import 'package:motion_record/pages/motion_second/motion_second_view.dart';
+import 'package:motion_record/pages/motion_start/motion_start_binding.dart';
+import 'package:motion_record/pages/motion_start/motion_start_view.dart';
 import 'package:motion_record/pages/motion_tab/motion_tab_binding.dart';
 import 'package:motion_record/pages/motion_tab/motion_tab_view.dart';
 import 'package:motion_record/pages/no_network/no_network_binding.dart';
 import 'package:motion_record/pages/no_network/no_network_view.dart';
+
+import 'db_montion/motion_methods.dart';
 
 Color primaryColor = const Color(0xff0062ff);
 Color bgColor = Colors.white;
@@ -31,7 +35,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Locations,
-      initialRoute: '/motionTab',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -84,6 +88,11 @@ class MyApp extends StatelessWidget {
 }
 List<GetPage<dynamic>> Locations = [
   GetPage(
+    name: '/',
+    page: () => const MotionStartView(),
+    binding: MotionStartBinding(),
+  ),
+  GetPage(
     name: '/motionTab',
     page: () => MotionTabPage(),
     binding: MotionTabBinding(),
@@ -92,6 +101,10 @@ List<GetPage<dynamic>> Locations = [
     name: '/motionFirst',
     page: () => MotionFirstPage(),
     binding: MotionFirstBinding(),
+  ),
+  GetPage(
+    name: '/motionStart',
+    page: () => const MotionMethods(),
   ),
   GetPage(
     name: '/motionSecond',
